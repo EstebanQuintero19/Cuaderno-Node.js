@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadernito - NodeJS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/indexstyle.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h4>Secciones</h4>
+        <a href="#nodejs">NodeJS - Desarrollo Web</a>
+        <a href="#quees">¿Qué es NodeJS?</a>
+        <a href="#diferencias">Diferencias Frontend/Backend</a>
+        <a href="#ventajas">Ventajas y Desventajas</a>
+        <a href="#instalacion">Instalación</a>
+        <a href="#npm">npm y módulos</a>
+        <a href="#importar">Importar/Exportar módulos</a>
+        <a href="#comandos">Comandos npm</a>
+        <a href="#flags">Flags comunes</a>
+        <a href="#modulos">Módulos importantes</a>
+        <a href="#extra">Paquetes útiles</a>
+        <a href="#uso">Uso de un módulo</a>
+    </div>
+
+    <div class="content">
+        <header>
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <h1>Cuadernito</h1>
+                    <p>Notas de clase de Cuadernito</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="container py-5">
+            <h2 id="nodejs">NodeJS - Desarrollo Web</h2>
+
+            <h3 id="quees">¿Qué es NodeJS?</h3>
+            <p>NodeJS permite usar JavaScript en el backend, o sea, fuera del navegador. Se puede usar para hacer APIs,
+                servidores, manejar bases de datos, etc.</p>
+
+            <h3 id="diferencias">Diferencia entre JS en el navegador y en el backend</h3>
+            <ul>
+                <li><strong>Frontend:</strong> Para botones, animaciones, formularios.</li>
+                <li><strong>Backend:</strong> Para manejar datos, peticiones, bases de datos.</li>
+            </ul>
+
+            <h3 id="ventajas">Ventajas y desventajas</h3>
+            <p><strong>Ventajas:</strong></p>
+            <ul>
+                <li>Usás el mismo lenguaje en cliente y servidor.</li>
+                <li>Mucha comunidad y recursos.</li>
+                <li>Ideal para apps en tiempo real.</li>
+            </ul>
+            <p><strong>Desventajas:</strong></p>
+            <ul>
+                <li>No es bueno para tareas pesadas.</li>
+                <li>Puede ser complicado manejar errores si no sabés bien.</li>
+            </ul>
+
+            <h3 id="instalacion">Instalación de NodeJS</h3>
+            <ol>
+                <li>Entrás a <a href="https://nodejs.org" target="_blank">nodejs.org</a></li>
+                <li>Descargás la versión recomendada.</li>
+                <li>Instalás haciendo clic en "Next" hasta terminar.</li>
+                <li>Verificás en consola:</li>
+            </ol>
+            <pre><code>node -v
+npm -v</code></pre>
+
+            <h2 id="npm">npm y módulos</h2>
+
+            <h3 id="importar">Importar y exportar módulos</h3>
+            <p><strong>Archivo operaciones.js:</strong></p>
+            <pre><code>function sumar(a, b) {
+  return a + b;
+}
+
+module.exports = sumar;</code></pre>
+
+            <p><strong>Archivo index.js:</strong></p>
+            <pre><code>const sumar = require('./operaciones');
+console.log(sumar(2, 3));</code></pre>
+
+            <h3>¿Qué es npm?</h3>
+            <p>Es el gestor de paquetes de Node. Sirve para instalar librerías externas. Lo mantiene GitHub.</p>
+
+            <h3>¿Yarn?</h3>
+            <p>Es otra herramienta similar a npm. Tiene buena performance y mejor cacheo.</p>
+
+            <h3>yarn.lock vs package-lock.json</h3>
+            <ul>
+                <li>Ambos fijan versiones de paquetes.</li>
+                <li>Uno lo genera yarn, el otro npm.</li>
+            </ul>
+
+            <h3 id="comandos">5 comandos npm útiles</h3>
+            <ul>
+                <li><code>npm init</code> – crea package.json</li>
+                <li><code>npm install</code> – instala paquetes</li>
+                <li><code>npm uninstall</code> – elimina paquetes</li>
+                <li><code>npm update</code> – actualiza lo instalado</li>
+                <li><code>npm list</code> – muestra lo que hay instalado</li>
+            </ul>
+
+            <h3 id="flags">Flags comunes</h3>
+            <ul>
+                <li><code>-g</code>: global</li>
+                <li><code>--save</code>: ya no se usa mucho</li>
+                <li><code>-D</code>: dependencia de desarrollo</li>
+            </ul>
+
+            <h3 id="modulos">Algunos módulos y para qué sirven</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Módulo</th>
+                            <th>Uso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>express</td>
+                            <td>Servidor web</td>
+                        </tr>
+                        <tr>
+                            <td>mongodb</td>
+                            <td>Conexión a base MongoDB</td>
+                        </tr>
+                        <tr>
+                            <td>mongoose</td>
+                            <td>Modelado de datos Mongo</td>
+                        </tr>
+                        <tr>
+                            <td>path</td>
+                            <td>Trabajar con rutas</td>
+                        </tr>
+                        <tr>
+                            <td>nodemon</td>
+                            <td>Reinicia el server al guardar</td>
+                        </tr>
+                        <tr>
+                            <td>cors</td>
+                            <td>Permitir peticiones cruzadas</td>
+                        </tr>
+                        <tr>
+                            <td>http</td>
+                            <td>Servidor HTTP nativo</td>
+                        </tr>
+                        <tr>
+                            <td>multer</td>
+                            <td>Subida de archivos</td>
+                        </tr>
+                        <tr>
+                            <td>morgan</td>
+                            <td>Logs de peticiones</td>
+                        </tr>
+                        <tr>
+                            <td>prettier</td>
+                            <td>Formatea el código</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 id="extra">Otros paquetes útiles</h3>
+            <ul>
+                <li><strong>express-validator:</strong> validar formularios</li>
+                <li><strong>pdfkit, puppeteer:</strong> exportar a PDF</li>
+                <li><strong>exceljs:</strong> exportar a Excel</li>
+                <li><strong>pdf-parse:</strong> leer PDF</li>
+                <li><strong>xlsx:</strong> leer Excel</li>
+            </ul>
+
+            <h3>3 módulos interesantes</h3>
+            <ul>
+                <li><strong>chalk:</strong> Colorea texto en consola</li>
+                <li><strong>dotenv:</strong> Manejar variables de entorno</li>
+                <li><strong>axios:</strong> Hacer peticiones HTTP</li>
+            </ul>
+
+            <h3 id="uso">¿Cómo se usa un módulo?</h3>
+            <pre><code>npm install axios
+const axios = require('axios');</code></pre>
+
+            <h3>¿Y si solo lo quiero para desarrollo?</h3>
+            <pre><code>npm install nodemon -D</code></pre>
+            <p>Con eso, npm lo guarda en <code>devDependencies</code>.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
